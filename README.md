@@ -22,8 +22,8 @@ For all questions please contact me zdimon77@gmail.com
   	apt-get install python3-venv
     python3 -m venv venv
     source ./venv/bin/activate
-    pip install -r requirements.txt
     cd pizza_shop
+    pip install -r requirements.txt
     ./bin/install
     
 Run server
