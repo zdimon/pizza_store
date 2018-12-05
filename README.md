@@ -28,4 +28,23 @@ For all questions please contact me zdimon77@gmail.com
     
 Run server
 
-    ./bin/serve
+    ./bin/serv
+    
+## Possible problems.
+
+### If you get this error.
+
+<p style="color: red">The virtual environment was not created successfully because ensurepip is not
+available.</p>	
+	
+	sudo apt-get install python3-pip
+	python3 -m venv myvenv --without-pip --system-site-packages
+	
+	
+### If you get this error.
+
+<p style="color: red">locale.Error: unsupported locale setting.</p>
+	
+	dpkg-reconfigure locales
+
+Then select ru and us UTF-8.
