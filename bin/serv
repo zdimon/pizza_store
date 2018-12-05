@@ -1,2 +1,2 @@
 . ./venv/bin/activate
-./manage.py runserver 8888
+./manage.py runserver 0.0.0.0:8888
