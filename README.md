@@ -1,10 +1,12 @@
 # Pizza store. Internet shop.
 
-This is an example of Django project for learning Pyhon.
+Internet shop for selling food online.
 
-It can be used by students and teachers.
+This is an example of Django project for learning and practicing Python language.
 
-Using it in production invironment is under your responsibility.
+This project can be used by all who want to get more experience in programming.  
+
+Using it in the production environment is only under your responsibility because it was created exclusively for educational purposes.
 
 For all questions please contact me zdimon77@gmail.com
 
