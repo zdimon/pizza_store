@@ -23,11 +23,8 @@ For all questions please contact me zdimon77@gmail.com
 
 ## Installation
     
-    git clone git@github.com:zdimon/pizza_store.git
+    git clone git@github.com:zdimon/pizza_store.git ; cd pizza_shop
     python3 -m venv myvenv --without-pip --system-site-packages
-    source ./venv/bin/activate
-    cd pizza_shop
-    pip install -r requirements.txt
     ./bin/install
     
 Run server
