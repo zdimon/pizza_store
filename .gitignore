@@ -1,0 +1,8 @@
+node_modules
+venv
+*.pyc
+db.sqlite3
+tmp
+media/*
+db.sqlite3-journal
+package-lock.json

@@ -20,6 +20,6 @@ For all questions please contact me zdimon77@gmail.com
     
     git clone git@github.com:zdimon/pizza_store.git
   	apt-get install python3-venv
-    python3 -m venv ve
+    python3 -m venv venv
 
 
