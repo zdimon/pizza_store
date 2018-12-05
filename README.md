@@ -34,10 +34,9 @@ Run server
 
 ### If you get this error.
 
-```html
-   <p style="color:red">The virtual environment was not created successfully because ensurepip is not
+<p style='color:red'>The virtual environment was not created successfully because ensurepip is not
 available.</p>
-```
+
 	
 	sudo apt-get install python3-pip
 	python3 -m venv myvenv --without-pip --system-site-packages
