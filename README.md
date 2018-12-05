@@ -16,11 +16,15 @@ For all questions please contact me zdimon77@gmail.com
 - Python 3
 - Django 2
 
+## Requirements (Ubuntu 16)
+
+    sudo apt-get install python3-venv git npm python3-pip
+    
+
 ## Installation
     
     git clone git@github.com:zdimon/pizza_store.git
-  	apt-get install python3-venv
-    python3 -m venv venv
+    python3 -m venv myvenv --without-pip --system-site-packages
     source ./venv/bin/activate
     cd pizza_shop
     pip install -r requirements.txt
@@ -30,17 +34,7 @@ Run server
 
     ./bin/serv
     
-## Possible problems.
-
-### If you get this error.
-
-<p style='color:red'>The virtual environment was not created successfully because ensurepip is not
-available.</p>
-
-	
-	sudo apt-get install python3-pip
-	python3 -m venv myvenv --without-pip --system-site-packages
-	
+## Possible problems.	
 	
 ### If you get this error.
 
