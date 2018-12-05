@@ -1,4 +1,6 @@
 . ./venv/bin/activate
 pip install -r requirements.txt
-./manage.py migrate
 npm install
+./manage.py migrate
+./manage.py load_users
+./manage.py load_pizza

@@ -8,6 +8,8 @@ This project can be used by all who want to get more experience in programming.
 
 Using it in the production environment is only under your responsibility because it was created exclusively for educational purposes.
 
+[DEMO](http://pizza.webmonstr.com:8888/)
+
 For all questions please contact me zdimon77@gmail.com
 
 
