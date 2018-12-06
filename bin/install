@@ -1,6 +1,9 @@
+python3 -m venv venv
 . ./venv/bin/activate
 pip install -r requirements.txt
 npm install
 ./manage.py migrate
 ./manage.py load_users
 ./manage.py load_pizza
+cd static
+ln -s node_modules/bootstrap/dist bootstrap
