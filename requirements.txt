@@ -4,3 +4,4 @@ werkzeug
 sorl-thumbnail
 Pillow
 gitpython
+django-widget-tweaks

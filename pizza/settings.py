@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'django_extensions',
-    'sorl.thumbnail'
+    'sorl.thumbnail', 
+    'account',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [

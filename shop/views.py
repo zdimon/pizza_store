@@ -3,7 +3,7 @@ from django.contrib.auth import logout
 # Create your views here.
 from django.contrib import messages
 
-from .forms import RegForm
+from .forms import CustomerRegForm as RegForm
 from .lib.shop_class import Shop
 from .models.pizza import Pizza
 
@@ -38,8 +38,8 @@ def registration(request):
     form = RegForm(request.POST)
     # check whether it's valid:
     if form.is_valid():  
-        username = form.cleaned_data['username']
-        messages.success(request, 'Bingo %s !!!' % username)
+        form.save()
+        messages.success(request, 'Bingo !!!')
         return redirect('home')
     # if a GET (or any other method) we'll create a blank form
     else:
