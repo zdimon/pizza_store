@@ -5,3 +5,4 @@ sorl-thumbnail
 Pillow
 gitpython
 django-widget-tweaks
+python_slugify==1.2.4

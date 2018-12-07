@@ -12,9 +12,13 @@
             {% for p in pizzas %}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        {% thumbnail p.image "150x100" crop="center" as im %}
-                          <img class="card-img-top" src="{{ im.url }}">
-                        {% endthumbnail %}
+                        
+                          <a href="{{p.get_absolute_url}}">
+                            {% thumbnail p.image "150x100" crop="center" as im %}
+                              <img class="card-img-top" src="{{ im.url }}" />
+                            {% endthumbnail %}
+                          </a>
+                        
                       <div class="card-body">
                        
                         <p class="card-text">{{ p.name }}</p>
