@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import logout
 # Create your views here.
 from django.contrib import messages
 
-from .forms import CustomerRegForm as RegForm
+from account.forms import CustomerRegForm as RegForm
 from .lib.shop_class import Shop
 from .models import Pizza
 from .models import Order

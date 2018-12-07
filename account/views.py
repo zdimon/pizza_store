@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as l
+from django.contrib.auth import logout
+from .forms import CustomerRegForm as RegForm
+from django.contrib import messages
 
 def login(request):
     username = request.POST['login']
