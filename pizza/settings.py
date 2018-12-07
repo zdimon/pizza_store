@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'sorl.thumbnail', 
     'account',
-    'widget_tweaks'
+    'widget_tweaks',
+    'captcha'
 ]
 
 MIDDLEWARE = [

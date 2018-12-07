@@ -7,6 +7,7 @@ from .lib.shop_class import Shop
 from .models import Pizza
 from .models import Order
 from django.http import Http404
+from .forms import TestimonialForm
 
 def home(request):
     form = RegForm()
@@ -25,7 +26,8 @@ def detail(request,slug):
     except:
         raise Http404('Не смог найти пицку %s' % slug)
 
-    return render(request,'shop/detail.html',{'pizza': pizza})
+    tform = TestimonialForm()
+    return render(request,'shop/detail.html',{'pizza': pizza, 'tform': tform})
 
 def make_order(request,pk):
     pizza = get_object_or_404(Pizza,pk=pk)

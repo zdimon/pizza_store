@@ -10,3 +10,7 @@ admin.site.register(Pizza, PizzaAdmin)
 
 
 
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ['email', 'message', 'is_public']
+
+admin.site.register(Testimonial, TestimonialAdmin)
