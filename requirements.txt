@@ -7,3 +7,4 @@ gitpython
 django-widget-tweaks
 python_slugify==1.2.4
 django-simple-captcha
+selenium==2.44

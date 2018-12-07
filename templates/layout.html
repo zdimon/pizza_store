@@ -27,8 +27,8 @@
             {% else %}
             <form action="{% url 'login' %}" method="POST" class="form-inline mt-2 mt-md-0">
                     {% csrf_token %}
-                    <input class="form-control mr-sm-2" type="text" name="login" placeholder="Login" >
-                    <input class="form-control mr-sm-2" type="text" name="password" placeholder="Password" >
+                    <input class="form-control mr-sm-2" type="text" id="login" name="login" placeholder="Login" >
+                    <input class="form-control mr-sm-2" type="text" id="password" name="password" placeholder="Password" >
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SignIn</button>
             </form>
             {% endif %}
@@ -46,7 +46,7 @@
 
                 {% if messages %}
                     {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}" role="alert">
+                    <div class="alert alert-{{ message.tags }}" id="alert-message" role="alert">
                             {{ message }} 
                     </div>
                     {% endfor %}

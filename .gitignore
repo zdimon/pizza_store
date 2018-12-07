@@ -7,3 +7,4 @@ media/*
 db.sqlite3-journal
 package-lock.json
 .vscode
+geckodriver.log
