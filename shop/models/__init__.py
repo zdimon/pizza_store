@@ -1,2 +1,2 @@
-from .order import Order
-from .pizza import Pizza
+from .order_model import Order
+from .pizza_model import Pizza

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 #from decimal import Decimal
-from .pizza import Pizza
+from .pizza_model import Pizza
 
 class Order(models.Model):
 
