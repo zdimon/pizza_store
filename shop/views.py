@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from account.forms import CustomerRegForm as RegForm
 from .lib.shop_class import Shop
-from .models import Pizza
+from .models import PizzaType
 from .models import Order
 from django.http import Http404
 from .forms import TestimonialForm
@@ -12,17 +12,13 @@ from .forms import TestimonialForm
 def home(request):
     form = RegForm()
     shop = Shop()
-    pizzas = Pizza.objects.all()
+    pizzas = PizzaType.objects.all()
     return render(request,'shop/home.html', {'shop': shop, 'form': form, 'pizzas': pizzas})
-
-
-
-
     
 
 def detail(request,slug):
     try:
-        pizza = Pizza.objects.get(name_slug=slug)
+        pizza = PizzaType.objects.get(name_slug=slug)
     except:
         raise Http404('Не смог найти пицку %s' % slug)
 
@@ -30,7 +26,7 @@ def detail(request,slug):
     return render(request,'shop/detail.html',{'pizza': pizza, 'tform': tform})
 
 def make_order(request,pk):
-    pizza = get_object_or_404(Pizza,pk=pk)
+    pizza_type = get_object_or_404(PizzaType,pk=pk)
     orders = Order.objects.all()
-    pizza.make_order(request)
+    #pizza_type.make_order(request)
     return render(request,'shop/order_list.html',{'pizza': pizza, 'orders': orders})
