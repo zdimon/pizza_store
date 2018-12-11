@@ -6,8 +6,11 @@ from account.forms import CustomerRegForm as RegForm
 from .lib.shop_class import Shop
 from .models import PizzaType
 from .models import Order
+from .models import Testimonial
 from django.http import Http404
 from .forms import TestimonialForm
+from django.views.generic.edit import FormView
+from django.contrib import messages
 
 def home(request):
     form = RegForm()
@@ -21,8 +24,19 @@ def detail(request,slug):
         pizza = PizzaType.objects.get(name_slug=slug)
     except:
         raise Http404('Не смог найти пицку %s' % slug)
+    tm = Testimonial()
+    tm.pizza = pizza
+ 
+    if request.method == 'POST':
+        tform = TestimonialForm(request.POST, request.FILES)
+        if tform.is_valid():  
+            tform.save()
+            messages.success(request, 'Thank you!')
+            tform = TestimonialForm(instance=tm)
+    else:
+        tform = TestimonialForm(instance=tm)
 
-    tform = TestimonialForm()
+
     return render(request,'shop/detail.html',{'pizza': pizza, 'tform': tform})
 
 def make_order(request,pk):
@@ -30,3 +44,7 @@ def make_order(request,pk):
     orders = Order.objects.all()
     #pizza_type.make_order(request)
     return render(request,'shop/order_list.html',{'pizza': pizza_type, 'orders': orders})
+
+
+
+

@@ -2,7 +2,7 @@
 {% load widget_tweaks %}
 {% load thumbnail %}
 {% load testimonials %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
     <h1>Detail information</h1>
@@ -21,7 +21,21 @@
         </div>
     </div>
    {% testimonial_tag pizza %}
-   {{ tform }}
+
+   {% if tform.errors %}
+    {% for field in tform %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+     {% endfor %}
+    {% endif %}
+
+   <form method="post" class="uniForm" action="{% url 'detail' slug=pizza.name_slug %}">
+    {% crispy tform %}
+   </form>
+
 {% endblock %}
 
 {% block footer %}
