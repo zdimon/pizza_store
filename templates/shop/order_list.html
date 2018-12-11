@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% load thumbnail %}
+
+{% block header %}
+    <h1>{{ pizza }}</h1>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ pizza }}</h1>
+    <div class="row">
+        
+        <div class="col-md-12">
+                <table class="table">
+                        <thead>
+                        <tr>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for o in orders %}
+                                    <tr>
+                                    <td>{{ o.pizza }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    </tr>
+                            {% endfor %}
+                 </tbody>
+            </table>                                  
+        </div>
+
+      
+        
+    </div>
+    
+        
+    
+{% endblock %}
+
+{% block footer %}
+    <h3>This is footer</h3>
+{% endblock %}

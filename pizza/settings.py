@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'shop',
     'django_extensions',
     'sorl.thumbnail',
-    'account'
+    'account',
+    'widget_tweaks',
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -137,3 +140,4 @@ MESSAGE_TAGS = {
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MEDIA_URL = '/media/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
