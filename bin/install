@@ -6,4 +6,5 @@ npm install
 ./manage.py load_users
 ./manage.py load_pizza
 cd static
-ln -s node_modules/bootstrap/dist bootstrap
+ln -s ../node_modules/bootstrap/dist bootstrap
+ln -s ../node_modules/jquery/dist jquery

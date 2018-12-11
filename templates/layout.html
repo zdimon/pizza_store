@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>{% block title %}Hello{% endblock %}</title>
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
-    <script src="{% static 'prj.js' %}"></script>
+    
 </head>
 <body>
     <header>
@@ -25,12 +25,20 @@
                   </ul>
                 
             {% else %}
-            <form action="{% url 'login' %}" method="POST" class="form-inline mt-2 mt-md-0">
+            <ul class="navbar-nav " id="logout_link" style="display: none">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+              </ul>
+            <form action="{% url 'login' %}" method="POST" id="login_form" class="form-inline mt-2 mt-md-0">
                     {% csrf_token %}
                     <input class="form-control mr-sm-2" type="text" id="login" name="login" placeholder="Login" >
                     <input class="form-control mr-sm-2" type="text" id="password" name="password" placeholder="Password" >
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SignIn</button>
+                    <!--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SignIn</button>
+                    -->
+                    <button id="login_link" class="btn btn-outline-success my-2 my-sm-0"> SignIn </button>
             </form>
+
             {% endif %}
 
           </div>
@@ -63,4 +71,6 @@
             {% block footer %}{% endblock %}
         </div>
       </footer>
+      <script src="/static/jquery/jquery.min.js"></script>
+      <script src="{% static 'prj.js' %}"></script>
 </html>

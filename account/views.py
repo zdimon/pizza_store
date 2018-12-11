@@ -4,6 +4,19 @@ from django.contrib.auth import authenticate, login as l
 from django.contrib.auth import logout
 from .forms import CustomerRegForm as RegForm
 from django.contrib import messages
+from jsonview.decorators import json_view
+
+@json_view
+def alogin(request):
+    username = request.POST['login']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        l(request, user)
+        return { 'status': 0, 'message': 'Welcome!!!!' }
+    else:
+        return { 'status': 1, 'message': 'Login or password incorrect!!!' }
+
 
 def login(request):
     username = request.POST['login']
