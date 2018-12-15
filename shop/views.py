@@ -7,16 +7,25 @@ from .lib.shop_class import Shop
 from .models import PizzaType
 from .models import Order
 from .models import Testimonial
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from .forms import TestimonialForm
 from django.views.generic.edit import FormView
 from django.contrib import messages
+import logging
+
+logger = logging.getLogger(__name__)
+response = HttpResponse()
 
 def home(request):
+    
+    logger.info('Something went wrong!')
+    print(request.session.get('_auth_user_id'))
     form = RegForm()
     shop = Shop()
     pizzas = PizzaType.objects.all()
-    return render(request,'shop/home.html', {'shop': shop, 'form': form, 'pizzas': pizzas})
+    response = render(request,'shop/home.html', {'shop': shop, 'form': form, 'pizzas': pizzas})
+    response.set_cookie('cookie_name', 'cookie_value')
+    return response
     
 
 def detail(request,slug):
