@@ -23,6 +23,13 @@ def detail(request,name):
     order = Order()
     order.pizza = pizza
     form = OrderForm(instance=order)
+    if request.method == 'POST':
+        form = OrderForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.warning(request, 'Saved!!!!')
+        else:
+            messages.warning(request, 'Error!!')
     return render(request,'shop/detail.html', {'pizza': pizza, 'form': form})
 
 

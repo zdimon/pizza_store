@@ -24,7 +24,8 @@ class OrderForm(ModelForm):
             'pizza': forms.HiddenInput(),
         }
 
-        def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.helper = FormHelper(self)
-            self.helper.layout.append(Submit('submit', 'Submit'))
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.layout.append(Submit('submit', 'Submit'))
+        

@@ -10,4 +10,7 @@ class PizzaAdmin(admin.ModelAdmin):
 admin.site.register(Pizza, PizzaAdmin)
 
 
-
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['pizza','address', 'name']
+    
+admin.site.register(Order, OrderAdmin)
