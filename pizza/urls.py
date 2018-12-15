@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from shop.views import home, login, logoutme, registration, detail, order
+from shop.views import home, login, logoutme, registration, detail, order, alogin
 
 
 from django.conf import settings
@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home, name='home'),
+    path('account/alogin', alogin, name='alogin'),
     path('admin/', admin.site.urls),
     path('detail/<str:name>', detail, name='detail'),
     path('order/<int:pizza_id>', order, name='order'),

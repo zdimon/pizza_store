@@ -8,6 +8,24 @@ from .lib.shop_class import Shop
 from .models.pizza import Pizza
 from .models.order import Order
 from .forms import OrderForm
+import logging
+from jsonview.decorators import json_view
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+from django.contrib.auth import authenticate, login as l
+
+
+@json_view
+def alogin(request):
+    username = request.POST['login']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        l(request, user)
+        return { 'status': 0, 'message': 'Welcome!!!!' }
+    else:
+        return { 'status': 1, 'message': 'Login or password incorrect!!!' }
 
 def order(request,pizza_id):
     pizza = Pizza.objects.get(pk=pizza_id)
@@ -23,10 +41,17 @@ def detail(request,name):
     order = Order()
     order.pizza = pizza
     form = OrderForm(instance=order)
+    if request.method == 'POST':
+        form = OrderForm(request.POST, request.FILES)
+        if form.is_valid():
+            messages.warning(request, 'Order has been saved.')
+            form.save()
+            form = OrderForm(instance=order)
     return render(request,'shop/detail.html', {'pizza': pizza, 'form': form})
 
 
 def home(request):
+    logger.debug('Something went wrong!')
     form = RegForm()
     shop = Shop()
     pizzas = Pizza.objects.all()
