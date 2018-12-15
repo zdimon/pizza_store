@@ -27,4 +27,9 @@ class OrderForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
+<<<<<<< HEAD
         self.helper.layout.append(Submit('submit', 'Submit'))
+=======
+        self.helper.layout.append(Submit('submit', 'Submit'))
+        
+>>>>>>> 1fc9bb054ae6dbaa73cf4d09fcfaa438b4690659
