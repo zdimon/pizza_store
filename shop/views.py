@@ -44,16 +44,12 @@ def detail(request,name):
     if request.method == 'POST':
         form = OrderForm(request.POST, request.FILES)
         if form.is_valid():
-<<<<<<< HEAD
             messages.warning(request, 'Order has been saved.')
             form.save()
             form = OrderForm(instance=order)
-=======
-            form.save()
-            messages.warning(request, 'Saved!!!!')
         else:
             messages.warning(request, 'Error!!')
->>>>>>> 1fc9bb054ae6dbaa73cf4d09fcfaa438b4690659
+
     return render(request,'shop/detail.html', {'pizza': pizza, 'form': form})
 
 
