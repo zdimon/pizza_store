@@ -44,4 +44,6 @@ def registration(request):
         return redirect('home')
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = NameForm()
+        form = RegForm()
+        messages.info(request, 'Wrong password, email or login')
+        return redirect('home')
