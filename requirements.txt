@@ -10,3 +10,4 @@ django-simple-captcha
 selenium==2.44
 django-crispy-forms==1.7.2
 django-jsonview
+liqpay-python

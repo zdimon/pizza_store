@@ -12,9 +12,39 @@ from .forms import TestimonialForm
 from django.views.generic.edit import FormView
 from django.contrib import messages
 import logging
+from django.conf import settings
+from liqpay.liqpay3 import LiqPay
 
 logger = logging.getLogger(__name__)
 response = HttpResponse()
+
+
+def pay_success(request):
+    return HttpResponse('ok thanks')
+
+
+def pay_process(request):
+    data = request.POST.get('data')
+    print (data)
+    return HttpResponse('payment')
+
+def pay_order(request,order_id):
+    
+    liqpay = LiqPay(settings.LIQPAY_PUBLIC_KEY, settings.LIQPAY_PRIVATE_KEY)
+    form_html = liqpay.cnb_form({
+        'action': 'pay',
+        'amount': '10',
+        'currency': 'UAH',
+        'description': 'pizza description',
+        'order_id': 'order_id',
+        'result_url': 'http://doc.pizza.webmonstr.com/shop/pay_success',
+        'server_url': 'http://doc.pizza.webmonstr.com/shop/pay_process',
+        'sandbox': 1,
+        'version': '3'
+    })
+    return render(request,'shop/pay_order.html',{'form_html': form_html})
+
+
 
 def home(request):
     
@@ -50,6 +80,9 @@ def detail(request,slug):
 
 def make_order(request,pk):
     pizza_type = get_object_or_404(PizzaType,pk=pk)
+    o = Order()
+    o.pizza = pizza_type
+    o.save()
     orders = Order.objects.all()
     o = Order.objects.create(pizza=pizza_type)
     #pizza_type.make_order(request)
