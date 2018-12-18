@@ -28,5 +28,6 @@ def detail(request,slug):
 def make_order(request,pk):
     pizza_type = get_object_or_404(PizzaType,pk=pk)
     orders = Order.objects.all()
+    o = Order.objects.create(pizza=pizza_type)
     #pizza_type.make_order(request)
     return render(request,'shop/order_list.html',{'pizza': pizza_type, 'orders': orders})
