@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'shop',
     'django_extensions',
     'sorl.thumbnail',
-    'account'
+    'account',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [

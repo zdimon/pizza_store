@@ -7,3 +7,6 @@ media/*
 db.sqlite3-journal
 package-lock.json
 .vscode
+uwsgi.ini
+pizza/.settings.py.swp
+vepizza/*

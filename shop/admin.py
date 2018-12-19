@@ -4,7 +4,7 @@ from .models import *
 # Register your models here.
 
 class PizzaAdmin(admin.ModelAdmin):
-    list_display = ['name','thumb']
+    list_display = ['name','thumb','name_slug']
 
 admin.site.register(Pizza, PizzaAdmin)
 
