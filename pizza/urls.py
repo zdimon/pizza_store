@@ -31,5 +31,7 @@ urlpatterns = [
     path('info/<int:pk>', InfoView.as_view(), name="show_page"),
     path('page/edit/<int:pk>', PageEditView.as_view(), name="edit_page"),
     path('ckeditor', include('ckeditor_uploader.urls')),
+    path('', include('social_django.urls', namespace='social'))
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
