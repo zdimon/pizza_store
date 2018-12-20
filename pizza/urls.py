@@ -20,7 +20,7 @@ from shop.views import home
 
 from django.conf import settings
 from django.conf.urls.static import static
-from page.views import InfoView
+from page.views import InfoView, PageEditView
 
 urlpatterns = [
     path('', home, name='home'),
@@ -28,6 +28,8 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('shop/', include('shop.urls')),
     path('captcha/', include('captcha.urls')),
-    path('info/<int:pk>', InfoView.as_view()),
+    path('info/<int:pk>', InfoView.as_view(), name="show_page"),
+    path('page/edit/<int:pk>', PageEditView.as_view(), name="edit_page"),
+    path('ckeditor', include('ckeditor_uploader.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
