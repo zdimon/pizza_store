@@ -20,7 +20,7 @@ from shop.views import home
 
 from django.conf import settings
 from django.conf.urls.static import static
-
+from page.views import InfoView
 
 urlpatterns = [
     path('', home, name='home'),
@@ -28,5 +28,6 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('shop/', include('shop.urls')),
     path('captcha/', include('captcha.urls')),
+    path('info/<int:pk>', InfoView.as_view()),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

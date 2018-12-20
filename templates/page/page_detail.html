@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+{% load thumbnail %}
+{% load testimonials %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Iinformation</h1>
+    <div class="row">
+        
+        <div class="col-md-12">
+
+            {{ object.title }}
+
+        </div>
+    </div>
+{% endblock %}
