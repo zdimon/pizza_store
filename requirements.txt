@@ -12,3 +12,5 @@ django-crispy-forms==1.7.2
 django-jsonview
 liqpay-python
 git+https://github.com/liqpay/sdk-python#egg=liqpay
+django-uploader
+django-ckeditor

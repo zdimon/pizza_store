@@ -168,7 +168,7 @@ LIQPAY_PUBLIC_KEY	= 'i7826832988'
 LIQPAY_PRIVATE_KEY	= 'uJvZ3op0RE4BLT2YVih3F1uwRD0PETEl35wOFBSU'
 
 INSTALLED_APPS += ['page']
-INSTALLED_APPS += ['ckeditor', 'ckeditor_uploader']
+INSTALLED_APPS += ['ckeditor']
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
