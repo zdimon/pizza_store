@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'captcha',
     'crispy_forms',
+    'catalog',
+    'mptt',
 ]
 
 MIDDLEWARE = [

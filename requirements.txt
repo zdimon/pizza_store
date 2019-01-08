@@ -14,3 +14,4 @@ liqpay-python
 git+https://github.com/liqpay/sdk-python#egg=liqpay
 django-uploader
 django-ckeditor
+django-mptt
