@@ -46,7 +46,12 @@ INSTALLED_APPS = [
     'crispy_forms',
     'catalog',
     'mptt',
+    'djcelery'
 ]
+
+import djcelery
+djcelery.setup_loader()
+BROKER_URL = "redis://localhost/0"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
