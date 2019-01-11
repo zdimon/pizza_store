@@ -84,7 +84,6 @@ def make_order(request,pk):
     o.pizza = pizza_type
     o.save()
     orders = Order.objects.all()
-    o = Order.objects.create(pizza=pizza_type)
     #pizza_type.make_order(request)
     return render(request,'shop/order_list.html',{'pizza': pizza_type, 'orders': orders})
 

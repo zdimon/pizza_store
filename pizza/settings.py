@@ -202,3 +202,21 @@ INSTALLED_APPS += ['social_django']
 
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+
+
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+
+
+class CeleryRouter(object):
+    def route_for_task(self, task, args=None, kwargs=None):
+        print ("Task: %s" % task)
+        if task == 'order':
+            return {'queue': 'order'}
+        else:
+            return None
+       
+CELERY_ROUTES = (CeleryRouter(), )
+
+
+
+

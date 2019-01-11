@@ -1,6 +1,10 @@
 from celery import task
+import time
 
-@task()
-def order_process():
-    print ('Process order task')
+@task(name='order')
+def order_process(order):
+    print ('Process order %s task' % order)
+    for i in range(5):
+        time.sleep(1)
+        print(i)
 
